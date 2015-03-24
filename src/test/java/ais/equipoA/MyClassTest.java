@@ -338,6 +338,19 @@ public class MyClassTest {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	/**
+	 * Test sobre los getter y los setter
+	 */
+	@Test
+	public void testGetSet(){
+		MyClass myClass = new MyClass(1, 1);
+		myClass.setN(10);
+		myClass.setM(20);
+		assertEquals(myClass.getM(), 20);
+		assertEquals(myClass.getN(), 10);
+	}
 	///////////////////////////////////////////////////////////////
 	//                     End of Public Methods                 //
 	///////////////////////////////////////////////////////////////
