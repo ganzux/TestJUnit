@@ -334,8 +334,32 @@ public class MyClassTest {
 			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail(e.getMessage());
+		}
+		
+		try {
+			MyClass test = new MyClass(1, 1);
+			test.myMethod();
+			assertEquals(1, test.getM());
+			assertEquals(1, test.getN());
+			
+			test = new MyClass(999, 1);
+			test.myMethod();
+			assertEquals(999, test.getM());
+			assertEquals(1, test.getN());
+			
+			test = new MyClass(1, 99999);
+			test.myMethod();
+			assertEquals(99999, test.getM());
+			assertEquals(1, test.getN());
+			
+			test = new MyClass(255, 50001);
+			test.myMethod();
+			assertEquals(21, test.getM());
+			assertEquals(3, test.getN());
+			
+		} catch (Exception e) {
+			fail(e.getMessage());
 		}
 	}
 	
